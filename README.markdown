@@ -1,3 +1,5 @@
+![MAME Logo](emuladores.png)
+
 # Lista de Jogos de Luta - Neo Geo, Neo Geo Pocket, PS1 e PSP
 
 **Aviso de Segurança**: Os links de download para jogos arcade (Neo Geo e outros jogos MAME) são do site [WoWroms](https://wowroms.com/en/roms/list/mame). Tenha cuidado ao acessar este site, pois há relatos de malware e anúncios maliciosos. Considere fontes legais como [PlayStation Store](https://store.playstation.com) ou [Nintendo eShop](https://www.nintendo.com/us/store/) para obter esses jogos. Para jogos de Neo Geo Pocket, PS1 e PSP, procure ROMs ou ISOs em fontes confiáveis ou plataformas legais. Use um antivírus atualizado ao baixar arquivos.
