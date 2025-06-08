@@ -1,0 +1,169 @@
+<script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                // Convert sheet to JSON to filter blank rows
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                // Filter out blank rows (rows where all cells are empty, null, or undefined)
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                // Fallback
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                // Convert filtered JSON back to CSV
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script><!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Jogos de Luta para MAME</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        h1, h2 {
+            color: #333;
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .warning {
+            background-color: #ffe6e6;
+            padding: 15px;
+            border: 1px solid #cc0000;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lista de Jogos de Luta para MAME</h1>
+    <div class="warning">
+        <p><strong>Aviso:</strong> Os links de download são do site <a href="https://wowroms.com">WoWroms</a>. Tenha cuidado ao acessar este site, pois há relatos de malware e anúncios maliciosos. Considere fontes legais como <a href="https://store.playstation.com">PlayStation Store</a> ou <a href="https://www.nintendo.com/store">Nintendo eShop</a> para obter esses jogos.</p>
+    </div>
+
+    <h2>CPS-1</h2>
+    <table>
+        <tr>
+            <th>Jogo</th>
+            <th>Ano de Lançamento</th>
+            <th>Desenvolvedora</th>
+            <th>Link de Download</th>
+        </tr>
+        <tr><td>Street Fighter II: The World Warrior</td><td>1991</td><td>Capcom</td><td><a href="https://wowroms.com/en/roms/mame/street-fighter-ii-the-world-warrior/106124.html">Baixar</a></td></tr>
+        <tr><td>Street Fighter II': Champion Edition</td><td>1992</td><td>Capcom</td><td><a href="https://wowroms.com/en/roms/mame/street-fighter-ii-champion-edition/106135.html">Baixar</a></td></tr>
+        <tr><td>Street Fighter II' Turbo: Hyper Fighting</td><td>1992</td><td>Capcom</td><td><a href="https://wowroms.com/en/roms/mame/street-fighter-ii-hyper-fighting/106155.html">Baixar</a></td></tr>
+        <tr><td>The Punisher</td><td>1993</td><td>Capcom</td><td><a href="https://wowroms.com/en/roms/mame/the-punisher/99251.html">Baixar</a></td></tr>
+    </table>
+
+    <h2>CPS-2</h2>
+    <table>
+        <tr>
+            <th>Jogo</th>
+            <th>Ano de Lançamento</th>
+            <th>Desenvolvedora</th>
+            <th>Link de Download</th>
+        </tr>
+        <tr><td>Super Street Fighter II: The New Challengers</td><td>1993</td><td>Capcom</td><td><a href="https://wowroms.com/en/roms/mame/super-street-fighter-ii-the-new-challengers/107819.html">Baixar</a></td></tr>
+        <tr><td>Super Street Fighter II Turbo</td><td>1994</td><td>Capcom</td><td><a href="https://wowroms.com/en/roms/mame/super-street-fighter-ii-turbo/107828.html">Baixar</a></td></tr>
+        <tr><td>X-Men: Children of the Atom</td><td>1994</td><td>Capcom</td><td><a href="https://wowroms.com/en/roms/mame/x-men-children-of-the-atom-europe/110687.html">Baixar</a></td></tr>
+        <tr><td>Marvel Super Heroes</td><td>1995</td><td>Capcom</td><td><a href="https://wowroms.com/en/roms/mame/marvel-super-heroes-europe/96484.html">Baixar</a></td></tr>
+        <tr><td>Street Fighter Alpha: Warriors' Dreams</td><td>1995</td><td>Capcom</td><td><a href="https://wowroms.com/en/roms/mame/street-fighter-alpha-warriors-dreams-europe/106199.html">Baixar</a></td></tr>
+        <tr><td>Street Fighter Alpha 2</td><td>1996</td><td>Capcom</td><td><a href="https://wowroms.com/en/roms/mame/street-fighter-alpha-2-europe/106200.html">Baixar</a></td></tr>
+        <tr><td>X-Men vs. Street Fighter</td><td>1996</td><td>Capcom</td><td><a href="https://wowroms.com/en/roms/mame/x-men-vs.-street-fighter-europe/110713.html">Baixar</a></td></tr>
+        <tr><td>Marvel Super Heroes vs. Street Fighter</td><td>1997</td><td>Capcom</td><td><a href="https://wowroms.com/en/roms/mame/marvel-super-heroes-vs.-street-fighter-europe/96498.html">Baixar</a></td></tr>
+        <tr><td>Street Fighter Alpha 3</td><td>1998</td><td>Capcom</td><td><a href="https://wowroms.com/en/roms/mame/street-fighter-alpha-3-europe/106203.html">Baixar</a></td></tr>
+        <tr><td>Marvel vs. Capcom: Clash of Super Heroes</td><td>1998</td><td>Capcom</td><td><a href="https://wowroms.com/en/roms/mame/marvel-vs.-capcom-clash-of-super-heroes-europe/96703.html">Baixar</a></td></tr>
+    </table>
+
+    <h2>Neo Geo</h2>
+    <table>
+        <tr>
+            <th>Jogo</th>
+            <th>Ano de Lançamento</th>
+            <th>Desenvolvedora</th>
+            <th>Link de Download</th>
+        </tr>
+        <tr><td>Fatal Fury: King of Fighters</td><td>1991</td><td>SNK</td><td><a href="https://wowroms.com/en/roms/mame/fatal-fury-king-of-fighters/82784.html">Baixar</a></td></tr>
+        <tr><td>Art of Fighting</td><td>1992</td><td>SNK</td><td><a href="https://wowroms.com/en/roms/mame/art-of-fighting/77416.html">Baixar</a></td></tr>
+        <tr><td>Samurai Shodown</td><td>1993</td><td>SNK</td><td><a href="https://wowroms.com/en/roms/mame/samurai-shodown-samurai-spirits/100350.html">Baixar</a></td></tr>
+        <tr><td>The King of Fighters '94</td><td>1994</td><td>SNK</td><td><a href="https://wowroms.com/en/roms/mame/the-king-of-fighters-94/87355.html">Baixar</a></td></tr>
+        <tr><td>Fatal Fury 3: Road to the Final Victory</td><td>1995</td><td>SNK</td><td><a href="https://wowroms.com/en/roms/mame/fatal-fury-3-road-to-the-final-victory-garou-densetsu-3-haruka-naru-tatakai/82786.html">Baixar</a></td></tr>
+        <tr><td>The King of Fighters '95</td><td>1995</td><td>SNK</td><td><a href="https://wowroms.com/en/roms/mame/the-king-of-fighters-95/87356.html">Baixar</a></td></tr>
+        <tr><td>Samurai Shodown III: Blades of Blood</td><td>1995</td><td>SNK</td><td><a href="https://wowroms.com/en/roms/mame/samurai-shodown-iii-samurai-spirits-zankurou-m/100354.html">Baixar</a></td></tr>
+        <tr><td>The King of Fighters '96</td><td>1996</td><td>SNK</td><td><a href="https://wowroms.com/en/roms/mame/the-king-of-fighters-96/87359.html">Baixar</a></td></tr>
+        <tr><td>Samurai Shodown IV: Amakusa's Revenge</td><td>1996</td><td>SNK</td><td><a href="https://wowroms.com/en/roms/mame/samurai-shodown-iv-amakusas-revenge-samurai-s/100356.html">Baixar</a></td></tr>
+        <tr><td>The King of Fighters '97</td><td>1997</td><td>SNK</td><td><a href="https://wowroms.com/en/roms/mame/the-king-of-fighters-97/87361.html">Baixar</a></td></tr>
+        <tr><td>The King of Fighters '98</td><td>1998</td><td>SNK</td><td><a href="https://wowroms.com/en/roms/mame/the-king-of-fighters-98-the-slugfest/87366.html">Baixar</a></td></tr>
+        <tr><td>Garou: Mark of the Wolves</td><td>1999</td><td>SNK</td><td><a href="https://wowroms.com/en/roms/mame/garou-mark-of-the-wolves/83721.html">Baixar</a></td></tr>
+    </table>
+
+    <h2>Outros Jogos Interessantes</h2>
+    <table>
+        <tr>
+            <th>Jogo</th>
+            <th>Ano de Lançamento</th>
+            <th>Desenvolvedora</th>
+            <th>Link de Download</th>
+        </tr>
+        <tr><td>Street Fighter III: 3rd Strike</td><td>1999</td><td>Capcom</td><td><a href="https://wowroms.com/en/roms/mame/street-fighter-iii-3rd-strike-fight-for-the-futur-europe/106254.html">Baixar</a></td></tr>
+        <tr><td>Marvel vs. Capcom 2: New Age of Heroes</td><td>2000</td><td>Capcom</td><td><a href="https://wowroms.com/en/roms/mame/marvel-vs.-capcom-2-new-age-of-heroes-korea/96704.html">Baixar</a></td></tr>
+        <tr><td>The King of Fighters 2002</td><td>2002</td><td>Eolith/SNK</td><td><a href="https://wowroms.com/en/roms/mame/the-king-of-fighters-2002/87350.html">Baixar</a></td></tr>
+        <tr><td>Guilty Gear X</td><td>2000</td><td>Arc System Works</td><td><a href="https://wowroms.com/en/roms/mame/guilty-gear-x/83842.html">Baixar</a></td></tr>
+        <tr><td>Virtua Fighter 3</td><td>1996</td><td>Sega AM2</td><td><a href="https://wowroms.com/en/roms/mame/virtua-fighter-3/109830.html">Baixar</a></td></tr>
+    </table>
+</body>
+</html>

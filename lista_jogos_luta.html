@@ -1,0 +1,232 @@
+<script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                // Convert sheet to JSON to filter blank rows
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                // Filter out blank rows (rows where all cells are empty, null, or undefined)
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                // Fallback
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                // Convert filtered JSON back to CSV
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script><!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Jogos de Luta com Links de Download</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        h1, h2 {
+            color: #333;
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .warning {
+            background-color: #ffe6e6;
+            padding: 15px;
+            border: 1px solid #cc0000;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lista de Jogos de Luta</h1>
+    <div class="warning">
+        <p><strong>Aviso:</strong> Os links de download são baseados em [WoWroms](https://wowroms.com/pt/). Tenha cuidado ao acessar este site, pois há relatos de malware, anúncios maliciosos e riscos de segurança. Considere fontes legais como PlayStation Store ou Nintendo eShop para obter esses jogos.</p>
+    </div>
+    <p>Para jogos sem link exato, procure por "nome-do-jogo plataforma wowroms.com/pt" no Google.</p>
+
+    <h2>Super Nintendo (SNES)</h2>
+    <table>
+        <tr>
+            <th>Jogo</th>
+            <th>Ano de Lançamento</th>
+            <th>Desenvolvedora</th>
+            <th>Link de Download</th>
+        </tr>
+        <tr><td>Street Fighter II</td><td>1992</td><td>Capcom</td><td><a href="https://wowroms.com/pt/roms/super-nintendo/street-fighter-ii-usa/29330.html">Baixar</a></td></tr>
+        <tr><td>Mortal Kombat</td><td>1993</td><td>Midway</td><td><a href="https://wowroms.com/pt/roms/super-nintendo/mortal-kombat-usa/28481.html">Baixar</a></td></tr>
+        <tr><td>Fatal Fury 2</td><td>1993</td><td>SNK</td><td>Procurar em <a href="https://wowroms.com/pt/roms/list/Super%2BNintendo">WoWroms</a></td></tr>
+        <tr><td>Art of Fighting</td><td>1993</td><td>SNK</td><td>Procurar em <a href="https://wowroms.com/pt/roms/list/Super%2BNintendo">WoWroms</a></td></tr>
+        <tr><td>Teenage Mutant Ninja Turtles: Tournament Fighters</td><td>1993</td><td>Konami</td><td>Procurar em <a href="https://wowroms.com/pt/roms/list/Super%2BNintendo">WoWroms</a></td></tr>
+        <tr><td>Killer Instinct</td><td>1994</td><td>Rare</td><td>Procurar em <a href="https://wowroms.com/pt/roms/list/Super%2BNintendo">WoWroms</a></td></tr>
+        <tr><td>Mortal Kombat II</td><td>1994</td><td>Midway</td><td><a href="https://wowroms.com/pt/roms/super-nintendo/mortal-kombat-ii-usa/28490.html">Baixar</a></td></tr>
+        <tr><td>Super Street Fighter II</td><td>1994</td><td>Capcom</td><td><a href="https://wowroms.com/pt/roms/super-nintendo/super-street-fighter-ii-usa/29717.html">Baixar</a></td></tr>
+        <tr><td>Primal Rage</td><td>1995</td><td>Atari</td><td>Procurar em <a href="https://wowroms.com/pt/roms/list/Super%2BNintendo">WoWroms</a></td></tr>
+        <tr><td>Mortal Kombat 3</td><td>1995</td><td>Midway</td><td><a href="https://wowroms.com/pt/roms/super-nintendo/mortal-kombat-3-usa/28485.html">Baixar</a></td></tr>
+        <tr><td>Street Fighter Alpha 2</td><td>1996</td><td>Capcom</td><td><a href="https://wowroms.com/pt/roms/super-nintendo/street-fighter-alpha-2-usa/29326.html">Baixar</a></td></tr>
+    </table>
+
+    <h2>PlayStation 1 (PS1)</h2>
+    <table>
+        <tr>
+            <th>Jogo</th>
+            <th>Ano de Lançamento</th>
+            <th>Desenvolvedora</th>
+            <th>Link de Download</th>
+        </tr>
+        <tr><td>Battle Arena Toshinden</td><td>1995</td><td>Tamsoft</td><td>Procurar em <a href="https://wowroms.com/pt/isos/list/Playstation">WoWroms</a></td></tr>
+        <tr><td>Tekken</td><td>1995</td><td>Namco</td><td><a href="https://wowroms.com/pt/isos/playstation/tekken/32712.html">Baixar</a></td></tr>
+        <tr><td>Street Fighter Alpha: Warriors' Dreams</td><td>1995</td><td>Capcom</td><td>Procurar em <a href="https://wowroms.com/pt/isos/list/Playstation">WoWroms</a></td></tr>
+        <tr><td>Mortal Kombat 3</td><td>1995</td><td>Midway</td><td>Procurar em <a href="https://wowroms.com/pt/isos/list/Playstation">WoWroms</a></td></tr>
+        <tr><td>Tekken 2</td><td>1996</td><td>Namco</td><td><a href="https://wowroms.com/pt/isos/playstation/tekken-2/32714.html">Baixar</a></td></tr>
+        <tr><td>Street Fighter Alpha 2</td><td>1996</td><td>Capcom</td><td>Procurar em <a href="https://wowroms.com/pt/isos/list/Playstation">WoWroms</a></td></tr>
+        <tr><td>Mortal Kombat Trilogy</td><td>1996</td><td>Midway</td><td>Procurar em <a href="https://wowroms.com/pt/isos/list/Playstation">WoWroms</a></td></tr>
+        <tr><td>Pocket Fighter</td><td>1997</td><td>Capcom</td><td>Procurar em <a href="https://wowroms.com/pt/isos/list/Playstation">WoWroms</a></td></tr>
+        <tr><td>X-Men vs. Street Fighter</td><td>1997</td><td>Capcom</td><td>Procurar em <a href="https://wowroms.com/pt/isos/list/Playstation">WoWroms</a></td></tr>
+        <tr><td>Tekken 3</td><td>1997</td><td>Namco</td><td><a href="https://wowroms.com/pt/isos/playstation/tekken-3-clone/32715.html">Baixar</a></td></tr>
+        <tr><td>Street Fighter Alpha 3</td><td>1998</td><td>Capcom</td><td><a href="https://wowroms.com/pt/isos/playstation/street-fighter-alpha-3/32654.html">Baixar</a></td></tr>
+    </table>
+
+    <h2>Arcade: Capcom Play System 1 (CPS-1)</h2>
+    <table>
+        <tr>
+            <th>Jogo</th>
+            <th>Ano de Lançamento</th>
+            <th>Desenvolvedora</th>
+            <th>Link de Download</th>
+        </tr>
+        <tr><td>Street Fighter II: The World Warrior</td><td>1991</td><td>Capcom</td><td><a href="https://wowroms.com/pt/roms/capcom-play-system-1/street-fighter-ii-the-world-warrior/62589.html">Baixar</a></td></tr>
+        <tr><td>Street Fighter II': Champion Edition</td><td>1992</td><td>Capcom</td><td><a href="https://wowroms.com/pt/roms/capcom-play-system-1/street-fighter-ii-champion-edition/62616.html">Baixar</a></td></tr>
+        <tr><td>Street Fighter II' Turbo: Hyper Fighting</td><td>1992</td><td>Capcom</td><td>Procurar em <a href="https://wowroms.com/pt/roms/list/Capcom%2BPlay%2BSystem%2B1">WoWroms</a></td></tr>
+        <tr><td>The Punisher</td><td>1993</td><td>Capcom</td><td>Procurar em <a href="https://wowroms.com/pt/roms/list/Capcom%2BPlay%2BSystem%2B1">WoWroms</a></td></tr>
+    </table>
+
+    <h2>Arcade: Capcom Play System 2 (CPS-2)</h2>
+    <table>
+        <tr>
+            <th>Jogo</th>
+            <th>Ano de Lançamento</th>
+            <th>Desenvolvedora</th>
+            <th>Link de Download</th>
+        </tr>
+        <tr><td>Super Street Fighter II</td><td>1993</td><td>Capcom</td><td>Procurar em <a href="https://wowroms.com/pt/roms/list/Capcom%2BPlay%2BSystem%2B2">WoWroms</a></td></tr>
+        <tr><td>Super Street Fighter II Turbo</td><td>1994</td><td>Capcom</td><td><a href="https://wowroms.com/pt/roms/capcom-play-system-2/super-street-fighter-ii-turbo/62843.html">Baixar</a></td></tr>
+        <tr><td>X-Men: Children of the Atom</td><td>1994</td><td>Capcom</td><td>Procurar em <a href="https://wowroms.com/pt/roms/list/Capcom%2BPlay%2BSystem%2B2">WoWroms</a></td></tr>
+        <tr><td>Marvel Super Heroes</td><td>1995</td><td>Capcom</td><td>Procurar em <a href="https://wowroms.com/pt/roms/list/Capcom%2BPlay%2BSystem%2B2">WoWroms</a></td></tr>
+        <tr><td>Street Fighter Alpha: Warriors' Dreams</td><td>1995</td><td>Capcom</td><td>Procurar em <a href="https://wowroms.com/pt/roms/list/Capcom%2BPlay%2BSystem%2B2">WoWroms</a></td></tr>
+        <tr><td>Street Fighter Alpha 2</td><td>1996</td><td>Capcom</td><td>Procurar em <a href="https://wowroms.com/pt/roms/list/Capcom%2BPlay%2BSystem%2B2">WoWroms</a></td></tr>
+        <tr><td>X-Men vs. Street Fighter</td><td>1996</td><td>Capcom</td><td>Procurar em <a href="https://wowroms.com/pt/roms/list/Capcom%2BPlay%2BSystem%2B2">WoWroms</a></td></tr>
+        <tr><td>Marvel Super Heroes vs. Street Fighter</td><td>1997</td><td>Capcom</td><td>Procurar em <a href="https://wowroms.com/pt/roms/list/Capcom%2BPlay%2BSystem%2B2">WoWroms</a></td></tr>
+        <tr><td>Pocket Fighter</td><td>1997</td><td>Capcom</td><td>Procurar em <a href="https://wowroms.com/pt/roms/list/Capcom%2BPlay%2BSystem%2B2">WoWroms</a></td></tr>
+        <tr><td>Street Fighter Alpha 3</td><td>1998</td><td>Capcom</td><td>Procurar em <a href="https://wowroms.com/pt/roms/list/Capcom%2BPlay%2BSystem%2B2">WoWroms</a></td></tr>
+        <tr><td>Marvel vs. Capcom: Clash of Super Heroes</td><td>1998</td><td>Capcom</td><td>Procurar em <a href="https://wowroms.com/pt/roms/list/Capcom%2BPlay%2BSystem%2B2">WoWroms</a></td></tr>
+    </table>
+
+    <h2>Arcade: Neo Geo</h2>
+    <table>
+        <tr>
+            <th>Jogo</th>
+            <th>Ano de Lançamento</th>
+            <th>Desenvolvedora</th>
+            <th>Link de Download</th>
+        </tr>
+        <tr><td>Fatal Fury: King of Fighters</td><td>1991</td><td>SNK</td><td>Procurar em <a href="https://wowroms.com/pt/roms/list/Neo%2BGeo">WoWroms</a></td></tr>
+        <tr><td>Art of Fighting</td><td>1992</td><td>SNK</td><td>Procurar em <a href="https://wowroms.com/pt/roms/list/Neo%2BGeo">WoWroms</a></td></tr>
+        <tr><td>Samurai Shodown</td><td>1993</td><td>SNK</td><td>Procurar em <a href="https://wowroms.com/pt/roms/list/Neo%2BGeo">WoWroms</a></td></tr>
+        <tr><td>Samurai Shodown II</td><td>1994</td><td>SNK</td><td>Procurar em <a href="https://wowroms.com/pt/roms/list/Neo%2BGeo">WoWroms</a></td></tr>
+        <tr><td>The King of Fighters '94</td><td>1994</td><td>SNK</td><td>Procurar em <a href="https://wowroms.com/pt/roms/list/Neo%2BGeo">WoWroms</a></td></tr>
+        <tr><td>Fatal Fury 3: Road to the Final Victory</td><td>1995</td><td>SNK</td><td>Procurar em <a href="https://wowroms.com/pt/roms/list/Neo%2BGeo">WoWroms</a></td></tr>
+        <tr><td>The King of Fighters '95</td><td>1995</td><td>SNK</td><td>Procurar em <a href="https://wowroms.com/pt/roms/list/Neo%2BGeo">WoWroms</a></td></tr>
+        <tr><td>Samurai Shodown III: Blades of Blood</td><td>1995</td><td>SNK</td><td>Procurar em <a href="https://wowroms.com/pt/roms/list/Neo%2BGeo">WoWroms</a></td></tr>
+        <tr><td>The King of Fighters '96</td><td>1996</td><td>SNK</td><td>Procurar em <a href="https://wowroms.com/pt/roms/list/Neo%2BGeo">WoWroms</a></td></tr>
+        <tr><td>Samurai Shodown IV: Amakusa's Revenge</td><td>1996</td><td>SNK</td><td>Procurar em <a href="https://wowroms.com/pt/roms/list/Neo%2BGeo">WoWroms</a></td></tr>
+        <tr><td>The King of Fighters '97</td><td>1997</td><td>SNK</td><td><a href="https://wowroms.com/pt/roms/neo-geo/the-king-of-fighters-97/58937.html">Baixar</a></td></tr>
+        <tr><td>The King of Fighters '98</td><td>1998</td><td>SNK</td><td><a href="https://wowroms.com/pt/roms/neo-geo/the-king-of-fighters-98-the-slugfest/58940.html">Baixar</a></td></tr>
+        <tr><td>Garou: Mark of the Wolves</td><td>1999</td><td>SNK</td><td>Procurar em <a href="https://wowroms.com/pt/roms/list/Neo%2BGeo">WoWroms</a></td></tr>
+    </table>
+
+    <h2>Sega Mega Drive/Genesis</h2>
+    <table>
+        <tr>
+            <th>Jogo</th>
+            <th>Ano de Lançamento</th>
+            <th>Desenvolvedora</th>
+            <th>Link de Download</th>
+        </tr>
+        <tr><td>Mortal Kombat</td><td>1993</td><td>Midway</td><td><a href="https://wowroms.com/pt/roms/sega-genesis-megadrive/mortal-kombat/26028.html">Baixar</a></td></tr>
+        <tr><td>Eternal Champions</td><td>1993</td><td>Sega</td><td>Procurar em <a href="https://wowroms.com/pt/roms/list/Sega%2BGenesis-MegaDrive">WoWroms</a></td></tr>
+        <tr><td>Street Fighter II': Special Champion Edition</td><td>1993</td><td>Capcom</td><td>Procurar em <a href="https://wowroms.com/pt/roms/list/Sega%2BGenesis-MegaDrive">WoWroms</a></td></tr>
+        <tr><td>Mortal Kombat II</td><td>1994</td><td>Midway</td><td><a href="https://wowroms.com/es/roms/sega-genesis-megadrive/mortal-kombat-ii/26031.html">Baixar</a></td></tr>
+        <tr><td>Primal Rage</td><td>1995</td><td>Atari</td><td>Procurar em <a href="https://wowroms.com/pt/roms/list/Sega%2BGenesis-MegaDrive">WoWroms</a></td></tr>
+    </table>
+
+    <h2>Sega Saturn</h2>
+    <table>
+        <tr>
+            <th>Jogo</th>
+            <th>Ano de Lançamento</th>
+            <th>Desenvolvedora</th>
+            <th>Link de Download</th>
+        </tr>
+        <tr><td>Virtua Fighter</td><td>1994</td><td>Sega AM2</td><td>Não disponível em WoWroms</td></tr>
+        <tr><td>Virtua Fighter 2</td><td>1995</td><td>Sega AM2</td><td>Não disponível em WoWroms</td></tr>
+        <tr><td>X-Men: Children of the Atom</td><td>1995</td><td>Capcom</td><td>Não disponível em WoWroms</td></tr>
+        <tr><td>Marvel Super Heroes</td><td>1995</td><td>Capcom</td><td>Não disponível em WoWroms</td></tr>
+        <tr><td>Street Fighter Alpha: Warriors' Dreams</td><td>1995</td><td>Capcom</td><td>Não disponível em WoWroms</td></tr>
+        <tr><td>Street Fighter Alpha 2</td><td>1996</td><td>Capcom</td><td>Não disponível em WoWroms</td></tr>
+        <tr><td>X-Men vs. Street Fighter</td><td>1996</td><td>Capcom</td><td>Não disponível em WoWroms</td></tr>
+        <tr><td>Marvel Super Heroes vs. Street Fighter</td><td>1997</td><td>Capcom</td><td>Não disponível em WoWroms</td></tr>
+    </table>
+</body>
+</html>
