@@ -51,48 +51,48 @@
 
 ## Neo Geo Pocket
 
-| Jogo | Ano de Lançamento | Desenvolvedora |
-|------|-------------------|----------------|
-| The King of Fighters R-1 | 1998 | SNK |
-| The King of Fighters R-2 | 1999 | SNK |
-| SNK vs. Capcom: Match of the Millennium | 1999 | SNK |
-| Fatal Fury: First Contact | 1999 | SNK |
-| Samurai Shodown! | 1998 | SNK |
-| Samurai Shodown! 2 | 1999 | SNK |
-| Last Blade | 1998 | SNK |
-| Gals Fighters | 2000 | SNK |
+| Jogo | Ano de Lançamento | Desenvolvedora | Link de Download |
+|------|-------------------|----------------|------------------|
+| The King of Fighters R-1 | 1998 | SNK | [Baixar](https://wowroms.com/en/roms/neogeo-pocket/the-king-of-fighters-r-1/257431.html) |
+| The King of Fighters R-2 | 1999 | SNK | [Baixar](https://wowroms.com/en/roms/neogeo-pocket/the-king-of-fighters-r-2/258678.html) |
+| SNK vs. Capcom: Match of the Millennium | 1999 | SNK | [Baixar](https://wowroms.com/en/roms/neogeo-pocket/snk-vs-capcom-match-of-the-millennium/258765.html) |
+| Fatal Fury: First Contact | 1999 | SNK | [Baixar](https://wowroms.com/en/roms/neogeo-pocket/fatal-fury-first-contact/258676.html) |
+| Samurai Shodown! | 1998 | SNK | [Baixar](https://wowroms.com/en/roms/neogeo-pocket/samurai-shodown/258772.html) |
+| Samurai Shodown! 2 | 1999 | SNK | [Baixar](https://wowroms.com/en/roms/neogeo-pocket/samurai-shodown-2/258774.html) |
+| Last Blade | 1998 | SNK | [Baixar](https://wowroms.com/en/roms/neogeo-pocket/the-last-blade/258679.html) |
+| Gals Fighters | 2000 | SNK | [Baixar](https://wowroms.com/en/roms/neogeo-pocket/gals-fighters/258677.html) |
 
 ## PlayStation 1 (PS1)
 
-| Jogo | Ano de Lançamento | Desenvolvedora |
-|------|-------------------|----------------|
-| Battle Arena Toshinden | 1995 | Tamsoft |
-| Tekken | 1995 | Namco |
-| Street Fighter Alpha | 1995 | Capcom |
-| Mortal Kombat 3 | 1995 | Midway |
-| Tekken 2 | 1996 | Namco |
-| Street Fighter Alpha 2 | 1996 | Capcom |
-| Mortal Kombat Trilogy | 1996 | Midway |
-| X-Men vs. Street Fighter | 1997 | Capcom |
-| Tekken 3 | 1997 | Namco |
-| Pocket Fighter | 1997 | Capcom |
-| Bloody Roar | 1997 | Eighting/Raizing |
-| Street Fighter Alpha 3 | 1998 | Capcom |
-| Darkstalkers 3 | 1998 | Capcom |
-| Guilty Gear | 1998 | Arc System Works |
-| Marvel vs. Capcom | 1998 | Capcom |
-| JoJo's Bizarre Adventure | 1999 | Capcom |
+| Jogo | Ano de Lançamento | Desenvolvedora | Link de Download |
+|------|-------------------|----------------|------------------|
+| Battle Arena Toshinden | 1995 | Tamsoft | [Baixar](https://wowroms.com/en/roms/sony-playstation/battle-arena-toshinden-u-slus-00005/204599.html) |
+| Tekken | 1995 | Namco | [Baixar](https://wowroms.com/en/roms/sony-playstation/tekken-v12-u-slus-00006/210336.html) |
+| Street Fighter Alpha | 1995 | Capcom | [Baixar](https://wowroms.com/en/roms/sony-playstation/street-fighter-alpha/209965.html) |
+| Mortal Kombat 3 | 1995 | Midway | [Baixar](https://wowroms.com/en/roms/sony-playstation/mortal-kombat-3-u-slus-00050/204911.html) |
+| Tekken 2 | 1996 | Namco | [Baixar](https://wowroms.com/en/roms/sony-playstation/tekken-2-v12-u-slus-00213/210337.html) |
+| Street Fighter Alpha 2 | 1996 | Capcom | [Baixar](https://wowroms.com/en/roms/sony-playstation/street-fighter-alpha-2-u-slus-00238/210107.html) |
+| Mortal Kombat Trilogy | 1996 | Midway | [Baixar](https://wowroms.com/en/roms/sony-playstation/mortal-kombat-trilogy-u-slus-00330/205085.html) |
+| X-Men vs. Street Fighter | 1997 | Capcom | [Baixar](https://wowroms.com/en/roms/sony-playstation/x-men-vs-street-fighter-j-sltp-00519/211870.html) |
+| Tekken 3 | 1997 | Namco | [Baixar](https://wowroms.com/en/roms/sony-playstation/tekken-3-u-slus-00402/210338.html) |
+| Pocket Fighter | 1997 | Capcom | [Baixar](https://wowroms.com/en/roms/sony-playstation/pocket-fighter-j-sltp-00642/210716.html) |
+| Bloody Roar | 1997 | Eighting/Raizing | [Baixar](https://wowroms.com/en/roms/sony-playstation/bloody-roar-u-slus-00699/204654.html) |
+| Street Fighter Alpha 3 | 1998 | Capcom | [Baixar](https://wowroms.com/en/roms/sony-playstation/street-fighter-alpha-3-u-slus-00821/210111.html) |
+| Darkstalkers 3 | 1998 | Capcom | [Baixar](https://wowroms.com/en/roms/sony-playstation/darkstalkers-3-u-slus-00757/204800.html) |
+| Guilty Gear | 1998 | Arc System Works | [Baixar](https://wowroms.com/en/roms/sony-playstation/guilty-gear-j-sltp-00948/209733.html) |
+| Marvel vs. Capcom | 1998 | Capcom | [Baixar](https://wowroms.com/en/roms/sony-playstation/marvel-vs-capcom-exhibition/258016.html) |
+| JoJo's Bizarre Adventure | 1999 | Capcom | [Baixar](https://wowroms.com/en/roms/sony-playstation/jojo-s-bizarre-adventure-j-sltp-00958/209838.html) |
 
 ## PlayStation Portable (PSP)
 
-| Jogo | Ano de Lançamento | Desenvolvedora |
-|------|-------------------|----------------|
-| Tekken 5: Dark Resurrection | 2006 | Namco |
-| Street Fighter Alpha 3 MAX | 2006 | Capcom |
-| Power Stone Collection | 2006 | Capcom |
-| Darkstalkers Chronicle | 2004 | Capcom |
-| The King of Fighters Re-Bout | 2004 | SNK Playmore |
-| The King of Fighters: The Orochi Saga | 2008 | SNK Playmore |
-| Soulcalibur: Broken Destiny | 2009 | Namco Bandai |
-| Guilty Gear XX Accent Core Plus | 2009 | Arc System Works |
+| Jogo | Ano de Lançamento | Desenvolvedora | Link de Download |
+|------|-------------------|----------------|------------------|
+| Tekken 5: Dark Resurrection | 2006 | Namco | [Baixar](https://wowroms.com/en/roms/psp/tekken-dark-resurrection/257309.html) |
+| Street Fighter Alpha 3 MAX | 2006 | Capcom | [Baixar](https://wowroms.com/en/roms/psp/street-fighter-alpha-3-max/257303.html) |
+| Power Stone Collection | 2006 | Capcom | [Baixar](https://wowroms.com/en/roms/psp/power-stone-collection/257367.html) |
+| Darkstalkers Chronicle | 2004 | Capcom | [Baixar](https://wowroms.com/en/roms/psp/darkstalkers-chronicle-the-chaos-tower/257261.html) |
+| The King of Fighters Re-Bout | 2004 | SNK Playmore | **Não disponível no PSP** |
+| The King of Fighters: The Orochi Saga | 2008 | SNK Playmore | [Baixar](https://wowroms.com/en/roms/psp/the-king-of-fighters-collection-the-orochi-saga/257374.html) |
+| Soulcalibur: Broken Destiny | 2009 | Namco Bandai | [Baixar](https://wowroms.com/en/roms/psp/soul-calibur-broken-destiny/257311.html) |
+| Guilty Gear XX Accent Core Plus | 2009 | Arc System Works | [Baixar](https://wowroms.com/en/roms/psp/guilty-gear-xx-accent-core-plus/257284.html) |
 
